@@ -5,13 +5,15 @@ public void setup() {
   
   for (int i = 0; i < balloons.length; i++) {
   balloons[i] = new Balloon(600,600);
-}
+   }
 }
 
 public void draw() {
   background(255);
   for (Balloon balloon : balloons) {
     if (!balloon.alive()) continue; 
+    
+    balloon.balloonVsMouse();
     balloon.move();
     balloon.draw();
     
